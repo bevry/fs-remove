@@ -5,6 +5,8 @@ import {
 	unlink as _unlink,
 	readdir as _readdir,
 } from 'fs'
+import { platform } from 'os'
+const isWindows = platform() === 'win32'
 import { exec } from 'child_process'
 import { versions } from 'process'
 const nodeVersion = String(versions.node || '0')
@@ -82,6 +84,7 @@ export default async function remove(
 			}
 
 			// is directory
+			// NOTE: if you are wondering why this now differs from @bevry/fs-rmdir, it is because the 14.14.0 option is earlier in this file
 			if (
 				versionCompare(nodeVersion, '12.16.0') >= 0 &&
 				versionCompare(nodeVersion, '16') < 0
@@ -100,8 +103,12 @@ export default async function remove(
 					_rmdir(path, { recursive: true, maxBusyTries: 10 } as any, next)
 				})
 			} else {
-				// no builtin option exists, so use workaround
-				exec(`rm -rf ${JSON.stringify(path)}`, next)
+				// no builtin option exists, so use platform-specific workarounds
+				// rmdir: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb490990(v=technet.10)?redirectedfrom=MSDN
+				exec(
+					`${isWindows ? `rmdir /s /q` : `rm -rf`} ${JSON.stringify(path)}`,
+					next
+				)
 			}
 		})
 	})

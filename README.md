@@ -48,7 +48,7 @@ Remove a file or directory.
 ### [Deno](https://deno.land "Deno is a secure runtime for JavaScript and TypeScript, it is an alternative for Node.js")
 
 ``` typescript
-import pkg from 'https://unpkg.com/@bevry/fs-remove@^1.6.0/edition-deno/index.ts'
+import pkg from 'https://unpkg.com/@bevry/fs-remove@^1.7.0/edition-deno/index.ts'
 ```
 ### [Editions](https://editions.bevry.me "Editions are the best way to produce and consume packages you care about.")
 
@@ -108,6 +108,7 @@ This package is published with the following editions:
 -   [Andrew Nesbitt](https://nesbitt.io) — Software engineer and researcher
 -   [Balsa](https://balsa.com) — We're Balsa, and we're building tools for builders.
 -   [Codecov](https://codecov.io) — Empower developers with tools to improve code quality and testing.
+-   [Frontend Masters](https://FrontendMasters.com) — The training platform for web app engineering skills – from front-end to full-stack! 🚀
 -   [Poonacha Medappa](https://poonachamedappa.com)
 -   [Rob Morris](https://github.com/Rob-Morris)
 -   [Sentry](https://sentry.io) — Real-time crash reporting for your web apps, mobile apps, and games.
@@ -123,6 +124,7 @@ This package is published with the following editions:
 -   [dr.dimitru](https://veliovgroup.com)
 -   [Elliott Ditman](https://elliottditman.com)
 -   [entroniq](https://gitlab.com/entroniq)
+-   [Frontend Masters](https://FrontendMasters.com)
 -   [GitHub](https://github.com/about)
 -   [Hunter Beast](https://cryptoquick.com)
 -   [Jean-Luc Geering](https://github.com/jlgeering)
